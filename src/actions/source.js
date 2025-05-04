@@ -21,7 +21,7 @@ export async function getZoroSources(id, provider, episodeid, epnum, subtype) {
         let data;
         const API = process.env.ZORO_API;
         if (API) {
-            const res = await fetch(`${API}/anime/episode-srcs?id=${episodeid}&server=vidstreaming&category=${subtype}`);
+            const res = await fetch(`${API}/api/v2/hianime/episode/sources?animeEpisodeId=${episodeid}?ep=${epnum}&server=hd-1&category=${subtype}`);
             data = await res.json();
         } else {
             console.log(episodeid)
